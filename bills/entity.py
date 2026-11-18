@@ -1,9 +1,12 @@
 from abc import ABC, abstractmethod
 
-class Person:
+
+
+class Person(ABC):
     def __init__(self, dni: str, email: str, mobile: str):
-        # Write here your code
-        pass
+        self.dni = dni
+        self.email = email
+        self.mobile = mobile
 
     @abstractmethod
     def print(self):
@@ -17,20 +20,27 @@ class Person:
        # Do not change this method
        return hash(self.dni)
 
+
 class Buyer(Person):
     def __init__(self, dni: str, email: str, mobile: str, full_name: str, age: int, address: str):
-        # Write here your code
-        pass
+        super().__init__(dni, email, mobile)
+
+        self.full_name = full_name
+        self.age = age
+        self.address = address
 
     def print(self):
         # Do not change this method
         print(f"Buyer: {self.dni}, email:{self.email}")
 
+
 class Seller(Person):
     # Write the parameters in the next line
-    def __init__():
-        # Write here your code        
-        pass
+    def __init__(self, dni: str, email: str, mobile: str, bussines_name:str, bussines_address: str):
+          super().__init__(dni, email, mobile)
+
+          self.bussines_name = bussines_name
+          self.bussines_address = bussines_address
         
     def print(self):
         # Do not change this method
