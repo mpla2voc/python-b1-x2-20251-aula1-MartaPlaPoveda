@@ -13,7 +13,6 @@ class TaxType(Enum):
 
 
 class Tax:
-    # Write the parameters in the next line
     def __init__(self, tax_id: str, tax_type: TaxType, percentage: float):
         self.tax_id = tax_id
         self.tax_type = tax_type
@@ -21,7 +20,6 @@ class Tax:
 
 
 class Product:
-     # Write the parameters in the next line
     def __init__(self, product_id: str, name: str, expiration_date: datetime, 
                  bar_code: str, quantity: int, price: float, taxes: list[Tax]):
         self.product_id = product_id
