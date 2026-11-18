@@ -54,7 +54,9 @@ class Statistics:
 
         for bill in self.bills:
             for product in bill.products:
-                products_tax[product] = product.calculate_total_taxes()
+                products_tax[product] = (
+                    products_tax.get(product, 0) + product.calculate_total_taxes()
+                    )
 
         if order_type == OrderType.ASC:
             ordered_products = sorted(
